@@ -12,3 +12,4 @@ rar
 bak
 apk
 exe
+sql
