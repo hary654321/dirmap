@@ -62,12 +62,12 @@ def saveResults(msg):
     @return:        
     '''
     filename ='/zrtx/log/cyberspace'+ getHour +'.json'
-    conf.output_path = os.path.join(paths.OUTPUT_PATH, filename)
+
     #判断文件是否存在，若不存在则创建该文件
-    if not os.path.exists(conf.output_path):
-        with open(conf.output_path,'w+') as temp:
+    if not os.path.exists(filename):
+        with open(filename,'w+') as temp:
             pass
-    with open(conf.output_path,'r+') as result_file:
+    with open(filename,'r+') as result_file:
         old = result_file.read()
         if msg+'\n' in old:
             pass
