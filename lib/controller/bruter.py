@@ -57,8 +57,8 @@ bar.log = progressbar.ProgressBar()
 
 def saveResultsAppend(msg):
     print("saveResults")
-    print(getHour)
-    filename ='/zrtx/log/cyberspace/path'+ getHour +'.json'
+    print(getHour())
+    filename ='/zrtx/log/cyberspace/path'+ getHour() +'.json'
 
     with open(filename, 'a+') as f:
         f.write(msg+"\n")
