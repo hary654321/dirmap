@@ -55,22 +55,12 @@ conf.autodiscriminator_md5 = set()
 
 bar.log = progressbar.ProgressBar()
 
-def saveResults(msg):
+def saveResultsAppend(msg):
     print("saveResults")
     filename ='/zrtx/log/cyberspace/path'+ getHour +'.json'
 
-    outputscreen.info(filename)
-    #判断文件是否存在，若不存在则创建该文件
-    if not os.path.exists(filename):
-        with open(filename,'w+') as temp:
-            pass
-    with open(filename,'r+') as result_file:
-        old = result_file.read()
-        if msg+'\n' in old:
-            pass
-        else:
-            result_file.write(msg+'\n')
-
+    with open(filename, 'a') as f:
+        f.write(msg)
 def getHour():
     '''
     @description: 获取当前时间
