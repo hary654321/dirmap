@@ -20,6 +20,7 @@ import pytz
 import gevent
 import progressbar
 import requests
+import json
 from gevent.queue import Queue
 from lxml import etree
 
@@ -62,7 +63,9 @@ def saveResultsAppend(response):
     filename ='/zrtx/log/cyberspace/path'+ getTimeZoneHour() +'.json'
 
     with open(filename, 'a+') as f:
-        f.write(response+"\n")
+        f.write( json.loads(response)+"\n")
+
+        
 def getTimeZoneHour():  
     utc = pytz.utc
     beijing = pytz.timezone("Asia/Shanghai")
