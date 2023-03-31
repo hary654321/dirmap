@@ -63,9 +63,9 @@ def saveResultsAppend(response):
     filename ='/zrtx/log/cyberspace/path'+ getTimeZoneHour() +'.json'
 
     with open(filename, 'a+') as f:
-        f.write( json.loads(response)+"\n")
+        f.write( response.json()+"\n")
 
-        
+
 def getTimeZoneHour():  
     utc = pytz.utc
     beijing = pytz.timezone("Asia/Shanghai")
