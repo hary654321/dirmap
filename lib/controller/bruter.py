@@ -68,7 +68,7 @@ def getHour():
     @param {type}
     @return:
     '''
-    return time.strftime('%Y-%m-%d %H:%M',time.localtime(time.time()))
+    return time.strftime('%Y-%m-%d-%H',time.localtime(time.time()))
 
 def loadConf():
     '''
