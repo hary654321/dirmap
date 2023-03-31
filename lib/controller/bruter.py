@@ -61,7 +61,7 @@ def saveResultsAppend(res):
 
     print(json.dumps(res))
     # print("saveResults")
-    # print(getTimeZoneHour())
+    print(getTimeZoneHour())
     filename ='/zrtx/log/cyberspace/path'+ getTimeZoneHour() +'.json'
 
     with open(filename, 'a+') as f:
