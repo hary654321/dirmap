@@ -58,6 +58,8 @@ conf.autodiscriminator_md5 = set()
 bar.log = progressbar.ProgressBar()
 
 def saveResultsAppend(response):
+
+    print(json.dumps(response.__dict__))
     # print("saveResults")
     # print(getTimeZoneHour())
     filename ='/zrtx/log/cyberspace/path'+ getTimeZoneHour() +'.json'
