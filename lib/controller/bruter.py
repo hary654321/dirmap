@@ -16,7 +16,7 @@ import re
 import sys
 import time
 import urllib
-
+import pytz
 import gevent
 import progressbar
 import requests
@@ -27,6 +27,7 @@ from lib.core.common import intToSize, outputscreen, urlSimilarCheck
 from lib.core.data import bar, conf, paths, payloads, tasks, th
 from lib.utils.config import ConfigFileParser
 from lib.plugins.inspector import Inspector
+from datetime import datetime
 
 #防止ssl未校验时出现提示信息
 requests.packages.urllib3.disable_warnings()
@@ -57,11 +58,31 @@ bar.log = progressbar.ProgressBar()
 
 def saveResultsAppend(msg):
     print("saveResults")
-    print(getHour())
-    filename ='/zrtx/log/cyberspace/path'+ getHour() +'.json'
+    print(getTimeZoneHour())
+    filename ='/zrtx/log/cyberspace/path'+ getTimeZoneHour() +'.json'
 
     with open(filename, 'a+') as f:
         f.write(msg+"\n")
+def getTimeZoneHour():  
+    utc = pytz.utc
+    beijing = pytz.timezone("Asia/Shanghai")
+
+    # 时间戳
+    loc_timestamp = time.time()
+
+    # 转utc时间 datetime.datetime 类型
+    utc_date = datetime.utcfromtimestamp(loc_timestamp)
+
+    # 转utc当地 标识的时间
+    utc_loc_time = utc.localize(utc_date)
+    fmt = '%Y-%m-%d-%H'
+
+    # 转北京时间
+    beijing_time = utc_loc_time.astimezone(beijing)
+
+
+    return beijing_time.strftime(fmt)
+
 def getHour():
     '''
     @description: 获取当前时间
