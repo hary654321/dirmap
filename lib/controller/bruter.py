@@ -57,11 +57,6 @@ bar.log = progressbar.ProgressBar()
 
 def saveResults(msg):
     print("saveResults")
-    '''
-    @description: 保存扫描结果
-    @param {type}       
-    @return:        
-    '''
     filename ='/zrtx/log/cyberspace/path'+ getHour +'.json'
 
     outputscreen.info(filename)
