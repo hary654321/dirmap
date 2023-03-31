@@ -28,7 +28,7 @@ def main():
     """
 
     # anyway output thr banner information
-    banner() 
+    # banner() 
 
     # set paths of project 
     paths.ROOT_PATH = os.getcwd() 

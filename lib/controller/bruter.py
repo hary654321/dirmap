@@ -55,13 +55,13 @@ conf.autodiscriminator_md5 = set()
 
 bar.log = progressbar.ProgressBar()
 
-def saveResults(domain,msg):
+def saveResults(msg):
     '''
-    @description: 结果保存，以"域名.txt"命名，url去重复
-    @param {domain:域名,msg:保存的信息}
-    @return: null
+    @description: 保存扫描结果
+    @param {type}       
+    @return:        
     '''
-    filename = domain +'.txt'
+    filename ='/zrtx/log/cyberspace'+ getHour +'.json'
     conf.output_path = os.path.join(paths.OUTPUT_PATH, filename)
     #判断文件是否存在，若不存在则创建该文件
     if not os.path.exists(conf.output_path):
@@ -73,6 +73,14 @@ def saveResults(domain,msg):
             pass
         else:
             result_file.write(msg+'\n')
+
+def getHour():
+    '''
+    @description: 获取当前时间
+    @param {type}
+    @return:
+    '''
+    return time.strftime('%Y-%m-%d %H:%M',time.localtime(time.time()))
 
 def loadConf():
     '''
@@ -455,7 +463,7 @@ def responseHandler(response):
         outputscreen.info('\r'+msg+' '*(th.console_width-len(msg)+1))
         #已去重复，结果保存。NOTE:此处使用response.url进行文件名构造，解决使用-iL参数时，不能按照域名来命名文件名的问题
         #使用replace()，替换`:`，修复window下不能创建有`:`的文件问题
-        saveResults(urllib.parse.urlparse(response.url).netloc.replace(':','_'),msg)
+        saveResults(msg)
     #关于递归扫描。响应在自定义状态码中时，添加判断是否进行递归扫描
     if response.status_code in conf.recursive_status_code:
         if conf.recursive_scan:
