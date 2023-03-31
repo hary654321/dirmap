@@ -56,6 +56,7 @@ conf.autodiscriminator_md5 = set()
 bar.log = progressbar.ProgressBar()
 
 def saveResults(msg):
+    print("saveResults")
     '''
     @description: 保存扫描结果
     @param {type}       
