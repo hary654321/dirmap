@@ -63,7 +63,7 @@ def saveResultsAppend(response):
     filename ='/zrtx/log/cyberspace/path'+ getTimeZoneHour() +'.json'
 
     with open(filename, 'a+') as f:
-        f.write( json.dumps(response)+"\n")
+        f.write(json.dumps(response)+"\n")
 
 
 def getTimeZoneHour():  
