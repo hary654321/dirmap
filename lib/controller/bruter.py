@@ -61,7 +61,7 @@ def saveResults(msg):
     @param {type}       
     @return:        
     '''
-    filename ='/zrtx/log/cyberspace'+ getHour +'.json'
+    filename ='/zrtx/log/cyberspace/path'+ getHour +'.json'
 
     #判断文件是否存在，若不存在则创建该文件
     if not os.path.exists(filename):
