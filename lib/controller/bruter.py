@@ -59,19 +59,6 @@ bar.log = progressbar.ProgressBar()
 
 def saveResultsAppend(res):
 
-    appDict = {
-    'name': '我是王瑞',
-    'playstore': True,
-    'company': 'Facebook',
-    'price': 100
-    }
-    app_json = json.dumps(appDict)
-    print(type(appDict))
-    print(app_json)
-
-
-
-
     print(type(res))
     a= json.dumps(res)
     print(type(a))
@@ -490,14 +477,13 @@ def responseHandler(response):
         if conf.response_size:
             msg += '[{}] '.format(str(size))
         msg += response.url
-        outputscreen.info('打印结果？？？？？' )
+        # outputscreen.info('打印结果？？？？？' )
         outputscreen.info('\r'+msg+' '*(th.console_width-len(msg)+1))
         #已去重复，结果保存。NOTE:此处使用response.url进行文件名构造，解决使用-iL参数时，不能按照域名来命名文件名的问题
         #使用replace()，替换`:`，修复window下不能创建有`:`的文件问题
 
         res={'code':str(response.status_code),'url':response.url,'size':str(size),'content-type':response.headers.get('content-type'),'content':response.text,'headers':response.headers,'cookies':response.cookies,'time':str(response.elapsed.total_seconds())+'s'}
 
-        print(response.json())
         saveResultsAppend(res)
     #关于递归扫描。响应在自定义状态码中时，添加判断是否进行递归扫描
     if response.status_code in conf.recursive_status_code:
