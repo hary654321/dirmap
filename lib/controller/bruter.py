@@ -473,7 +473,7 @@ def responseHandler(response):
             msg += '[{}] '.format(str(size))
         msg += response.url
         # outputscreen.info('打印结果？？？？？' )
-        outputscreen.info('\r'+msg+' '*(th.console_width-len(msg)+1))
+        # outputscreen.info('\r'+msg+' '*(th.console_width-len(msg)+1))
         #已去重复，结果保存。NOTE:此处使用response.url进行文件名构造，解决使用-iL参数时，不能按照域名来命名文件名的问题
         #使用replace()，替换`:`，修复window下不能创建有`:`的文件问题
 
