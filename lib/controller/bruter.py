@@ -479,7 +479,10 @@ def responseHandler(response):
 
         res={'code':str(response.status_code),'url':response.url,'size':str(size),'content-type':response.headers.get('content-type'),'content':response.text}
 
-        
+        notUse=['text/html','text/html;charset=utf-8','image/x-icon']
+        if response.headers.get('content-type') in notUse:
+            return
+
         if response.headers.get('content-type')=="text/html":
             return
         if response.text=="":
