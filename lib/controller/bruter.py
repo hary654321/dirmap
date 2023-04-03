@@ -495,8 +495,15 @@ def responseHandler(response):
 
         res={'code':str(response.status_code),'url':response.url,'size':str(size),'content-type':response.headers.get('content-type'),'content':response.text,'headers':response.headers,'cookies':response.cookies,'time':str(response.elapsed.total_seconds())+'s'}
        
-        print(type(response))
-        print(response.json())
+        appDict = {
+        'name': 'messenger',
+        'playstore': True,
+        'company': 'Facebook',
+        'price': 100
+        }
+        app_json = json.dumps(appDict)
+        print(app_json)
+
         saveResultsAppend(res)
     #关于递归扫描。响应在自定义状态码中时，添加判断是否进行递归扫描
     if response.status_code in conf.recursive_status_code:
