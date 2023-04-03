@@ -73,7 +73,7 @@ def saveResultsAppend(res):
 
 
     print(type(res))
-    a= json.dumps(res,separators=(',',':'))
+    a= json.dumps(res)
     print(a)
     # print("saveResults")
     print(getTimeZoneHour())
