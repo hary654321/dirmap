@@ -10,7 +10,7 @@
 
 import os
 import sys
-
+import json
 from gevent import monkey
 monkey.patch_all()
 from lib.controller.engine import run
@@ -26,6 +26,15 @@ def main():
     """
     main fuction of dirmap 
     """
+
+    appDict = {
+    'name': 'messenger',
+    'playstore': True,
+    'company': 'Facebook',
+    'price': 100
+    }
+    app_json = json.dumps(appDict)
+    print(app_json)
 
     # anyway output thr banner information
     # banner() 
