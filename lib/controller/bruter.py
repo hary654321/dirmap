@@ -59,6 +59,7 @@ bar.log = progressbar.ProgressBar()
 
 def saveResultsAppend(res):
 
+    print(res)
     appDict = {
     'name': 'messenger',
     'playstore': True,
