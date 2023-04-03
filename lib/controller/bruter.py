@@ -59,6 +59,7 @@ bar.log = progressbar.ProgressBar()
 
 def saveResultsAppend(res):
 
+    print(type(res))
     print(json.dumps(res))
     # print("saveResults")
     print(getTimeZoneHour())
