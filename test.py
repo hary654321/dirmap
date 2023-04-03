@@ -11,17 +11,18 @@
 import os
 import sys
 import json
-
+import requests
 
 def main():
-    appDict = {
-    'name': 'messenger',
-    'playstore': True,
-    'company': 'Facebook',
-    'price': 100
-    }
-    app_json = json.dumps(appDict)
-    print(app_json)
+    # Making a get request
+    response = requests.get('https://api.github.com')
+    
+    # print response
+    print(response)
+    
+    print(type(response))
+    # print json content
+    print(response.json())
 
 
 if __name__ == "__main__":
