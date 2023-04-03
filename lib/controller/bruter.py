@@ -66,6 +66,7 @@ def saveResultsAppend(res):
     'price': 100
     }
     app_json = json.dumps(appDict)
+    print(type(appDict))
     print(app_json)
 
 
@@ -494,15 +495,6 @@ def responseHandler(response):
         #使用replace()，替换`:`，修复window下不能创建有`:`的文件问题
 
         res={'code':str(response.status_code),'url':response.url,'size':str(size),'content-type':response.headers.get('content-type'),'content':response.text,'headers':response.headers,'cookies':response.cookies,'time':str(response.elapsed.total_seconds())+'s'}
-       
-        appDict = {
-        'name': 'messenger',
-        'playstore': True,
-        'company': 'Facebook',
-        'price': 100
-        }
-        app_json = json.dumps(appDict)
-        print(app_json)
 
         saveResultsAppend(res)
     #关于递归扫描。响应在自定义状态码中时，添加判断是否进行递归扫描
