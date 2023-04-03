@@ -59,6 +59,7 @@ bar.log = progressbar.ProgressBar()
 
 def saveResultsAppend(res):
 
+    print(type(res))
     a= json.dumps(res,separators=(',',':'))
     print(a)
     # print("saveResults")
