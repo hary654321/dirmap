@@ -59,6 +59,16 @@ bar.log = progressbar.ProgressBar()
 
 def saveResultsAppend(res):
 
+    appDict = {
+    'name': 'messenger',
+    'playstore': True,
+    'company': 'Facebook',
+    'price': 100
+    }
+    app_json = json.dumps(appDict)
+    print(app_json)
+
+
     print(type(res))
     a= json.dumps(res)
     print(a)
