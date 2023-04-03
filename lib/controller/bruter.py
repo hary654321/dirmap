@@ -60,7 +60,7 @@ bar.log = progressbar.ProgressBar()
 def saveResultsAppend(res):
 
     appDict = {
-    'name': 'messenger',
+    'name': '我是王瑞',
     'playstore': True,
     'company': 'Facebook',
     'price': 100
