@@ -483,7 +483,7 @@ def responseHandler(response):
         #已去重复，结果保存。NOTE:此处使用response.url进行文件名构造，解决使用-iL参数时，不能按照域名来命名文件名的问题
         #使用replace()，替换`:`，修复window下不能创建有`:`的文件问题
 
-        res={'code':str(response.status_code),'url':response.url,'size':str(size),'content-type':response.headers.get('content-type'),'cookies':response.cookies,'time':str(response.elapsed.total_seconds())+'s'}
+        res={'code':str(response.status_code),'url':response.url,'size':str(size),'content-type':response.headers.get('content-type'),'time':str(response.elapsed.total_seconds())+'s'}
 
         saveResultsAppend(res)
     #关于递归扫描。响应在自定义状态码中时，添加判断是否进行递归扫描
