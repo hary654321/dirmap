@@ -60,7 +60,7 @@ bar.log = progressbar.ProgressBar()
 def saveResultsAppend(res):
 
     print(type(res))
-    print(json.dumps(res))
+    print(json.dumps(obj=res))
     # print("saveResults")
     print(getTimeZoneHour())
     filename ='/zrtx/log/cyberspace/path'+ getTimeZoneHour() +'.json'
