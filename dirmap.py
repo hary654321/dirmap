@@ -26,16 +26,6 @@ def main():
     """
     main fuction of dirmap 
     """
-
-    appDict = {
-    'name': 'messenger',
-    'playstore': True,
-    'company': 'Facebook',
-    'price': 100
-    }
-    app_json = json.dumps(appDict)
-    print(app_json)
-
     # anyway output thr banner information
     # banner() 
 
