@@ -372,3 +372,10 @@ dirmap在编写过程中，借鉴了大量的优秀开源项目的模式与思�
 mail: xxlin.ujs@qq.com
 
 ![donate](doc/donate.jpg)
+
+
+
+cd /tmp/dirmap-master && python3  dirmap.py -i  http://www.zorelworld.com/  -lcf
+
+
+cd /tmp/dirmap-master && python3  dirmap.py -i  107.182.29.140:80 -lcf

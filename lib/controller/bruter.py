@@ -477,7 +477,7 @@ def responseHandler(response):
         #已去重复，结果保存。NOTE:此处使用response.url进行文件名构造，解决使用-iL参数时，不能按照域名来命名文件名的问题
         #使用replace()，替换`:`，修复window下不能创建有`:`的文件问题
 
-        res={'code':str(response.status_code),'url':response.url,'size':str(size),'content-type':response.headers.get('content-type'),'content':response.text}
+        res={'code':str(response.status_code),'url':response.url,'size':str(size),'content-type':response.headers.get('content-type'),'content':response.text,'host':response.headers.get('host')}
 
         # notUse=['text/html','text/html;charset=utf-8','image/x-icon']
         # if response.headers.get('content-type') in notUse:
